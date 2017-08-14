@@ -21,11 +21,12 @@ function LinkString(str) {
 
 }
 //js的函数语句处理形式为：GetAsc:'asefsd','-';结果与ucc中的GetAsc:asefsd,-;结果
- function GetAsc(Str){
+   function GetAsc(Str){
+    Str += ',';
     var RtnStr = Str.slice(0,DividePoint(Str,'='));
     var RtnObj = ucctojs(RtnStr);
     Str = Str.slice(DividePoint(Str,'=')+1,Str.length);
-    if(Str.search(/,/)!==-1){
+    if(Str.search(/,/)!==-1&&Str.slice(DividePoint(Str,',')+1,Str.length)!==""){
         //等号右边以逗号隔开
          var Str2 =  ucctojs(Str.slice(DividePoint(Str,',')+1,Str.length));
          var Str1 = ucctojs(Str.slice(0,DividePoint(Str,',')));
