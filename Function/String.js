@@ -62,6 +62,7 @@ function Replace(Str){
     Str += ',';
     var RtnStr = Str.slice(0,DividePoint(Str,'='));
     var RtnObj = ucctojs(RtnStr);
+	Str = Str.slice(DividePoint(Str,'=')+1,Str.length);
     var sonObjArray = new Array();
     var i=0;
     while (DividePoint(Str,',')!==-1) {
